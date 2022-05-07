@@ -77,7 +77,7 @@ try {
         v3.push_back(100 + i);
     print_vector(cout, v3);
 
-    // second part
+    // 2. part
     // 1
     int i1 = 7;
     int* p1 = &i1;
