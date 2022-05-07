@@ -7,7 +7,7 @@ class Token
 {
 public:
     char kind;			
-    double value;		//  give numbers: a value 
+    double value;		                                               //  give numbers: a value 
 
     //constructors
     Token(char ch) : kind(ch), value(0) {}
@@ -21,11 +21,11 @@ class Token_stream
 public:
     // The constructor just sets are full to indicate that the buffer is empty:
     Token_stream() : full(false), buffer('\0') {}
-    Token get();					  // let a Token (get() is defined elsewhere)
-    void putback(Token t);            // put a Token back
+    Token get();					                                    // let a Token (get() is defined elsewhere)
+    void putback(Token t);                                              // put a Token back
 private:
-    bool full;      				  // there is a Token in the buffer
-    Token buffer;					  // here is where we keep a Token put back using putback()
+    bool full;      				                                    // there is a Token in the buffer
+    Token buffer;					                                    // here is where we keep a Token put back using putback()
 };
 
 //------------------------------------------------------------------------------
@@ -68,9 +68,9 @@ Token Token_stream::get()
         case '0': case '1': case '2': case '3': case '4':
         case '5': case '6': case '7': case '8': case '9':
         {
-            std::cin.putback(ch);       // put digit back into the input stream
+            std::cin.putback(ch);                                     // put digit back into the input stream
             double val;
-            std::cin >> val;		    // reads a floating-point number
+            std::cin >> val;		                                  // reads a floating point number
             temp.kind = '8';
             temp.value = val;
             break;
@@ -84,17 +84,17 @@ Token Token_stream::get()
 
 //------------------------------------------------------------------------------
 
-Token_stream ts;        // provides get() and putback() fucntion
+Token_stream ts;                              // provides get() and putback() fucntion
 
 //------------------------------------------------------------------------------
 
-double expression();    // declaration so that primary() can invoke expression()
+double expression();                          // declaration so that primary() can invoke expression()
 
 //------------------------------------------------------------------------------
 
 double primary()
 {
-    double temp{};        // temp storage for the returns
+    double temp{};                            // temp storage for the returns
 
     Token t = ts.get();
     switch (t.kind)
@@ -110,14 +110,14 @@ double primary()
         temp = d;
         break;
     }
-    case '-':			    // deal with '-' unary operator
+    case '-':			             // deal with '-' unary operator
         temp = -1 * primary();
         break;
-    case '+':			    // deal with '+' unary operator
+    case '+':			             // deal with '+' unary operator
         temp = primary();
         break;
-    case '8':			    // we use '8' to represent a number
-        temp = t.value;  	// return the number's value
+    case '8':			             // we use '8' to represent a number
+        temp = t.value;  	         // return the number's value
         break;
     default:
         error("primary expected");
@@ -132,7 +132,7 @@ double primary()
 double term()
 {
     double left = primary();
-    Token t = ts.get();                 // get the next token from token stream
+    Token t = ts.get();               // get the next token from token stream
     while (true)
     {
         switch (t.kind)
