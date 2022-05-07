@@ -117,7 +117,7 @@ void f1()
     reverse(vi.begin(), vi.end());
     print(vi.begin(), vi.end());
 
-    // 1.5 - use function instead of function object
+    // 1.5 - using function instead of function object
     cout << "\n1.5: insert two items\n";
     vi.insert(vi.end(), Item("Horsesh", 99, 12.34));
     vi.insert(vi.end(), Item("C S400", 9988, 499.95));
@@ -176,7 +176,7 @@ void f2()
     reverse(li.begin(), li.end());
     print(li.begin(), li.end());
 
-    // 1.5 - use function instead of function object
+    // 1.5 - using function instead of function object
     cout << "\n1.5: insert two items\n";
     li.insert(li.end(), Item("Horsesh", 99, 12.34));
     li.insert(li.end(), Item("C S400", 9988, 499.95));
