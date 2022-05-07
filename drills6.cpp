@@ -7,7 +7,7 @@ class Token
 {
 public:
     char kind;			
-    double value;		// for numbers: a value 
+    double value;		//  give numbers: a value 
 
     //constructors
     Token(char ch) : kind(ch), value(0) {}
@@ -19,12 +19,12 @@ public:
 class Token_stream
 {
 public:
-    // The constructor just sets full to indicate that the buffer is empty:
+    // The constructor just sets are full to indicate that the buffer is empty:
     Token_stream() : full(false), buffer('\0') {}
-    Token get();					  // get a Token (get() is defined elsewhere)
-    void putback(Token t);  // put a Token back
+    Token get();					  // let a Token (get() is defined elsewhere)
+    void putback(Token t);            // put a Token back
 private:
-    bool full;      				// is there a Token in the buffer?
+    bool full;      				  // there is a Token in the buffer
     Token buffer;					  // here is where we keep a Token put back using putback()
 };
 
@@ -68,9 +68,9 @@ Token Token_stream::get()
         case '0': case '1': case '2': case '3': case '4':
         case '5': case '6': case '7': case '8': case '9':
         {
-            std::cin.putback(ch);     // put digit back into the input stream
+            std::cin.putback(ch);       // put digit back into the input stream
             double val;
-            std::cin >> val;		  // read a floating-point number
+            std::cin >> val;		    // reads a floating-point number
             temp.kind = '8';
             temp.value = val;
             break;
@@ -84,11 +84,11 @@ Token Token_stream::get()
 
 //------------------------------------------------------------------------------
 
-Token_stream ts;        // provides get() and putback() 
+Token_stream ts;        // provides get() and putback() fucntion
 
 //------------------------------------------------------------------------------
 
-double expression();    // declaration so that primary() can call expression()
+double expression();    // declaration so that primary() can invoke expression()
 
 //------------------------------------------------------------------------------
 
@@ -110,10 +110,10 @@ double primary()
         temp = d;
         break;
     }
-    case '-':			    // deal with - unary operator
+    case '-':			    // deal with '-' unary operator
         temp = -1 * primary();
         break;
-    case '+':			    // deal with + unary operator
+    case '+':			    // deal with '+' unary operator
         temp = primary();
         break;
     case '8':			    // we use '8' to represent a number
@@ -132,7 +132,7 @@ double primary()
 double term()
 {
     double left = primary();
-    Token t = ts.get(); // get the next token from token stream
+    Token t = ts.get();                 // get the next token from token stream
     while (true)
     {
         switch (t.kind)
@@ -153,7 +153,7 @@ double term()
             break;
         }
         default:
-            ts.putback(t);	// put t back into the token stream
+            ts.putback(t);	            // put t back into the token stream
             return left;
         }
     }
@@ -164,23 +164,23 @@ double term()
 // deal with + and -
 double expression()
 {
-    double left = term();      // read and evaluate a Term
-    Token t = ts.get();		   // get the next token from token stream
+    double left = term();               // read and evaluate(calculate) a Term
+    Token t = ts.get();		            // get the next token from token stream
     while (true)
     {
         switch (t.kind)
         {
         case '+':
-            left += term();		// evaluate Term and add
+            left += term();		        // evaluate Term and add
             t = ts.get();
             break;
         case '-':
-            left -= term();		// evaluate Term and subtract
+            left -= term();		        // evaluate Term and subtract
             t = ts.get();
             break;
         default:
-            ts.putback(t);		// put t back into the token stream
-            return left;		// finally: no more + or -: return the answer
+            ts.putback(t);		        // take t back into the token stream
+            return left;		        // finally: no more + or -: return the answer
         }
     }
 }
