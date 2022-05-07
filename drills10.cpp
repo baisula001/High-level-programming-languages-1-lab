@@ -1,4 +1,4 @@
-// Chapter 10, drill
+// Chapter 10 drill
 
 #include "../lib_files/std_lib_facilities.h"
 
@@ -39,14 +39,14 @@ istream& operator>>(istream& is, Point& p)
     return is;
 }
 
-// function to print to cout
+// using function to print to cout
 void print_vector(const vector<Point>& points)
 {
     for (int i = 0; i < points.size(); ++i)
         cout << points[i] << endl;
 }
 
-// function to print to file
+// using function to print to file
 void write_to_file(const vector<Point>& points, const string& name)
 {
     ofstream ost(name.c_str());
@@ -55,7 +55,7 @@ void write_to_file(const vector<Point>& points, const string& name)
         ost << points[i] << endl;
 }
 
-// function to read from file
+// using function to read from file
 void fill_from_file(vector<Point>& points, const string& name)
 {
     ifstream ist(name.c_str());
@@ -64,7 +64,7 @@ void fill_from_file(vector<Point>& points, const string& name)
     while (ist >> pp) points.push_back(pp);
 }
 
-// function to compare two vectors
+// using function to compare two vectors
 void compare_vectors(const vector<Point>& points1, const vector<Point>& points2)
 {
     if (points1.size() != points2.size())
@@ -86,25 +86,25 @@ try {
         original_points.push_back(p);
     }
 
-    // print points
+    // print out the points
     cout << "\nOriginal points:\n";
     print_vector(original_points);
 
-    // write points to file
+    // write points into file
     string filename = "pics_and_txt/chapter10_drill_out.txt";
     write_to_file(original_points, filename);
 
-    // read points from file
+    // reads points from file
     vector<Point> processed_points;
     fill_from_file(processed_points, filename);
 
-    // print data from both vectors
+    // print out data from both vectors
     cout << "\nData from ifstream:\n";
     print_vector(processed_points);
     cout << "\nOriginal data:\n";
     print_vector(original_points);
 
-    // compare vectors
+    // compare the vectors
     compare_vectors(original_points, processed_points);
 
 }
