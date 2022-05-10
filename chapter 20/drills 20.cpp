@@ -34,7 +34,7 @@ int main() {
 	int numbers[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
 	array<int, size> ai;
-	copy(numbers, numbers + size, ai.begin());
+	copy(numbers, numbers + size, ai.begin());                /* Number of elements */
 	print(ai, "array:");
 
 	vector<int> vi(size);
