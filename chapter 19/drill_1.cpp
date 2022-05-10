@@ -3,7 +3,7 @@
 template<typename T>
 struct S
 {
-    S(T vv = 0) : val{ vv } { }               /* one of the function declaration part */
+    S(T vv = 0) : val{ vv } { }                                                          /* Empty function body */
 
     T& get();
 
