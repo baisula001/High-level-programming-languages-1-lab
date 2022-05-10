@@ -20,7 +20,7 @@ void inc(C& c, int n) {                                     /* through reference
 }
 
 template<typename Iter1, typename Iter2>
-Iter2 my_copy(Iter1 f1, Iter1 e1, Iter2 f2) {                   /* means put the element of the iter1 value  copy into the iter2 from first to end*/
+Iter2 my_copy(Iter1 f1, Iter1 e1, Iter2 f2) {                   /* means copies [f1,e1) to [f2,f2+(e1–f1))*/
 	for (Iter1 p = f1; p != e1; ++p)                        /* p!= e1 means identify if the pointer reads to the end of value , and increament by 1 each of element */
 	
 	{
@@ -72,7 +72,7 @@ int main() {
 	cout << endl;
 
 	vector<int>::iterator vit;
-	vit = find(vi2.begin(), vi2.end(), 3);			/* what is the third position of element ,find the value*/
+	vit = find(vi2.begin(), vi2.end(), 3);			    /*find() to see if the vector contains the value 3,and find the value */
 	if (vit != vi2.end())
 	{
 		cout << "Found at: " << distance(vi2.begin(), vit) << endl;
@@ -85,7 +85,7 @@ int main() {
 	lit = find(li2.begin(), li2.end(), 27);
 	if (lit != li2.end())
 	{
-		cout << "Found at: " << distance(li2.begin(), lit) << endl;
+		cout << "Found at: " << distance(li2.begin(), lit) << endl;             /* find out the distance and position from the starting point*/
 	}
 	else {
 		cout << "Not found" << endl;
