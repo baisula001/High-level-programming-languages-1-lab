@@ -4,7 +4,7 @@ template<typename T>
 void print(const T& t, const string& s = " ")           /* A constant reference to a string variable (chang yin yong) chuan kong zhi */
 {
 	cout << s << "\t";                              /* \t:means (tab) character */
-	for (auto& i : t)
+	for (auto& i : t)                               /* through the reference i value,we got the address of i,bec i is belong to templ t.*/
 	{
 		cout << i << ' ';
 	}
@@ -12,29 +12,30 @@ void print(const T& t, const string& s = " ")           /* A constant reference 
 }
 
 template <typename C>
-void inc(C& c, int n) {
-	for (auto& i : c)
+void inc(C& c, int n) {                                     /* through reference value o,we got the address of the value i, and i belong to the tem c */
+	for (auto& i : c)                                   /* auto means i would be automatically identified the data type of the i value */
 	{
 		i += n;
 	}
 }
 
 template<typename Iter1, typename Iter2>
-Iter2 my_copy(Iter1 f1, Iter1 e1, Iter2 f2) {
-	for (Iter1 p = f1; p != e1; ++p)
+Iter2 my_copy(Iter1 f1, Iter1 e1, Iter2 f2) {                   /* means put the element of the iter1 value  copy into the iter2 from first to end*/
+	for (Iter1 p = f1; p != e1; ++p)                        /* p!= e1 means identify if the pointer reads to the end of value , and increament by 1 each of element */
+	
 	{
-		*f2++ = *p;
+		*f2++ = *p;                                     /* assign the pointer p value to f2 pointer and increament by 1,each of element */
 	}
 	return f2;
 }
 
 int main() {
 
-	constexpr int size = 10;
+	constexpr int size = 10;					/* initialize the array  with 10 element */
 	int numbers[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
-	array<int, size> ai;
-	copy(numbers, numbers + size, ai.begin());                /* Number of elements */
+	array<int, size> ai;						/* alias is ai*/	
+	copy(numbers, numbers + size, ai.begin());                	/* Number of elements */
 	print(ai, "array:");
 
 	vector<int> vi(size);
@@ -71,7 +72,7 @@ int main() {
 	cout << endl;
 
 	vector<int>::iterator vit;
-	vit = find(vi2.begin(), vi2.end(), 3);
+	vit = find(vi2.begin(), vi2.end(), 3);			/* what is the third position of element ,find the value*/
 	if (vit != vi2.end())
 	{
 		cout << "Found at: " << distance(vi2.begin(), vit) << endl;
