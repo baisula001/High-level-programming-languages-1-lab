@@ -1,6 +1,6 @@
 #include "std_lib_facilities.h"
 
-int ga[10]{ 1, 2, 4, 8, 16, 32, 64, 128, 256, 512 };
+int ga[10]{ 1, 2, 4, 8, 16, 32, 64, 128, 256, 512 };                /* ga is the arry name ,alias */
 
 
 void f(int a[], int x)
@@ -14,16 +14,16 @@ void f(int a[], int x)
 
     for (int i = 0; i < 10; i++)
     {
-        cout << la[i] << " ";
+        cout << la[i] << " ";                           /* " " function is give the space to the each of element of array */
     }
 
     cout << endl;
 
-    int* p = new int[10];
+    int* p = new int[10];                           /* initialize the point and put it into the heap area */
 
     for (int i = 0; i < 10; i++)
     {
-        p[i] = a[i];
+        p[i] = a[i];                                        /* assgin the array ele to the p array */
     }
 
     for (int i = 0; i < 10; i++)
