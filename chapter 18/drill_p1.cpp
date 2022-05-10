@@ -46,7 +46,7 @@ int main()
 
     for (int i = 0; i < 10; i++)
     {
-        x = x * (i + 1);
+        x = x * (i + 1);                                        /* traversal the i element int the  Algorithmic expression */
         aa[i] = 1 * x;
     }
 
