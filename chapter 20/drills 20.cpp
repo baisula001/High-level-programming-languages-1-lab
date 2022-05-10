@@ -1,9 +1,9 @@
 #include "std_lib_facilities.h"
 
 template<typename T>
-void print(const T& t, const string& s = " ")           A constant reference to a string variable (chang yin yong) chuan kong zhi
+void print(const T& t, const string& s = " ")           /* A constant reference to a string variable (chang yin yong) chuan kong zhi */
 {
-	cout << s << "\t";         \t:means (tab) character 
+	cout << s << "\t";                              /* \t:means (tab) character */
 	for (auto& i : t)
 	{
 		cout << i << ' ';
