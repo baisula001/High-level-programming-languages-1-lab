@@ -1,10 +1,10 @@
 #include "std_lib_facilities.h"
 
-vector<int> gv{ 1, 2, 4, 8, 16, 32, 64, 128, 256, 512 };
+vector<int> gv{ 1, 2, 4, 8, 16, 32, 64, 128, 256, 512 };            /* global arry ga*/
 
-void f(vector<int> v)
+void f(vector<int> v)                                               /* Define a function f() taking an int array argument*/
 {
-    vector<int> lv(v.size());
+    vector<int> lv(v.size());                                       /* display the number of array element */
 
     lv = v;
 
