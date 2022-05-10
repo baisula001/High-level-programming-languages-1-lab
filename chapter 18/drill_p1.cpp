@@ -14,12 +14,13 @@ void f(int a[], int x)
 
     for (int i = 0; i < 10; i++)
     {
-        cout << la[i] << " ";                           /* " " function is give the space to the each of element of array */
+        cout << la[i] << " ";                           
     }
 
     cout << endl;
 
-    int* p = new int[10];                           /* initialize the point and put it into the heap area */
+    int* p = new int[10];                           /* Define a pointer p to int,initialize it with an array allocated on free store with
+                                                        the same number of elements */
 
     for (int i = 0; i < 10; i++)
     {
@@ -33,14 +34,14 @@ void f(int a[], int x)
 
     cout << endl;
 
-    delete[] p;
+    delete[] p;                                     /* Deallocate (shi fang) the free-store array */
 }
 
 int main()
 {
-    f(ga, 10);
+    f(ga, 10);                                              /* Call f() with ga as its argument */
 
-    int aa[10];
+    int aa[10];                   /*Define an array aa with ten elements,initialize it with the first ten factorial values*/
 
     int x = 1;
 
@@ -50,7 +51,7 @@ int main()
         aa[i] = 1 * x;
     }
 
-    f(aa, 10);
+    f(aa, 10);                                              /* Call f() with aa as its argument */
 
     return 0;
 }
