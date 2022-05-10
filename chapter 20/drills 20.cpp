@@ -3,7 +3,7 @@
 template<typename T>
 void print(const T& t, const string& s = " ")
 {
-	cout << s << "\t";
+	cout << s << "\t";         \t:means (tab) character 
 	for (auto& i : t)
 	{
 		cout << i << ' ';
