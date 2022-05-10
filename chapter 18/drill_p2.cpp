@@ -28,7 +28,7 @@ void f(vector<int> v)
 
 int main()
 {
-    f(gv);
+    f(gv);                                              /* Call f() with ga as its argument. */
 
     vector<int> vv(10);
 
