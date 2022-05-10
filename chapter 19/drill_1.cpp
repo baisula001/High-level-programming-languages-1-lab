@@ -42,11 +42,11 @@ void read_val(T& v)
 }
 
 template<typename T>
-std::ostream& operator<<(ostream& os, vector<T>& v)
+std::ostream& operator<<(ostream& os, vector<T>& v)                  /* we invoke the << operater overload the '{' operater to make it has another meanning  */
 {
     os << "{ ";
     for (int i = 0; i < v.size(); ++i) {
-        os << v[i] << (i < v.size() - 1 ? ", " : " ");
+        os << v[i] << (i < v.size() - 1 ? ", " : " ");               /* Ternary operator  : san mu yun suan fu */
     }
     os << "}" << endl;
 
@@ -57,7 +57,7 @@ template<typename T>
 std::istream& operator>>(istream& is, vector<T>& v)
 {
     char ch = 0;
-    is >> ch;
+    is >> ch;                                                           /* cheak if is charactor value */
     if (ch != '{') {
         is.unget();
         return is;
@@ -74,9 +74,9 @@ std::istream& operator>>(istream& is, vector<T>& v)
 
 int main()
 {
-    S<int> si{ 64 };
+    S<int> si{ 64 };                                        /* into vecter put integer */
 
-    S<char> sc{ 'a' };
+    S<char> sc{ 'a' };                                      /* into the charator vector put char*/
 
     S<double> sd{ 3.14 };
 
@@ -119,7 +119,7 @@ int main()
     vector<int> v2;
     read_val(v2);
     S<vector<int>> sv2{ v2 };
-    cout << sv2.get();
+    cout << sv2.get();                                          /* get(),set() is the built in function of c++ */
 
     return 0;
 }
